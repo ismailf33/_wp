@@ -4,46 +4,7 @@
 
 //========custom function for custom_meta_boxes
 
-function d_post_type()
-    {
-        $labels = array(
-            'name'                  => 'slide',
-            'singular_name'         => 'B',
-            'menu_name'             => 'functions',
-            'name_admin_bar'        => 'D',
-            'add_new'               => 'E',
-            'add_new_item'          => 'F',
-            'new_item'              => 'G',
-            'edit_item'             => 'H',
-            'view_item'             => 'I',
-            'all_items'             => 'J',
-            'search items'          => 'K',
-            'parent_item_colon'     => 'L',
-            'not_found'             => 'M',
-            'not_found_in_trash'    => 'N',
-            );
 
-        $args = array(
-            'labels'                => $labels,
-            'public'                => true,
-            'publicaly_queryable'   => true,
-            'show_ui'               => true,
-            'show_in_menu'          => true,
-            'query_var'             => true,
-            'rewrite'               => array( 'slug' => 'Slider' ),
-            'capability_type'       => 'post',
-            'has_archive'           => true,
-            'Hierarchical'          => false,
-            'menu_position'         => null,
-            'menu_icon'             => 'dashicons-format-image',
-            'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','hierarchical','trackbacks','custom-fields','revisions','page-attributes'),
-            'taxonomies'            =>array('category'),
-            );
-
-        register_post_type('Slider',$args);
-        register_taxonomy('Slider_category','Slider',array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'rewrite' => array('slug' => 'slider-category')));
-    }
-    add_action('init','d_post_type');
 
 
 
